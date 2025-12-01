@@ -1,4 +1,4 @@
-import { FileTree, Folder } from 'lucide-react'
+import { Folders, Folder } from 'lucide-react'
 
 interface FolderTreeProps {
   structure: string[]
@@ -8,7 +8,7 @@ export default function FolderTree({ structure }: FolderTreeProps) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
       <div className="flex items-center gap-2 mb-4">
-        <FileTree className="h-5 w-5 text-blue-600" />
+        <Folders className="h-5 w-5 text-blue-600" />
         <h2 className="text-xl font-semibold text-gray-900">Folder Structure</h2>
       </div>
       <div className="bg-gray-50 rounded-md p-4 max-h-[500px] overflow-auto">
