@@ -32,59 +32,6 @@ interface FileContent {
   path: string
 }
 
-// Files to prioritize for inclusion in documentation
-const IMPORTANT_FILES = [
-  'readme.md',
-  'readme.txt',
-  'package.json',
-  'package-lock.json',
-  'yarn.lock',
-  'pnpm-lock.yaml',
-  'requirements.txt',
-  'pom.xml',
-  'build.gradle',
-  'cargo.toml',
-  'go.mod',
-  'dockerfile',
-  'docker-compose.yml',
-  '.env.example',
-  'tsconfig.json',
-  'jsconfig.json',
-  'vite.config.ts',
-  'vite.config.js',
-  'webpack.config.js',
-  'tailwind.config.ts',
-  'tailwind.config.js',
-]
-
-// File extensions to include
-const INCLUDED_EXTENSIONS = [
-  '.ts', '.tsx', '.js', '.jsx', '.py', '.java', '.go', '.rs', '.cpp', '.c', '.h',
-  '.cs', '.php', '.rb', '.swift', '.kt', '.dart', '.vue', '.svelte',
-  '.json', '.yaml', '.yml', '.toml', '.xml', '.md', '.txt', '.sh', '.bat',
-  '.css', '.scss', '.sass', '.less', '.html', '.htm'
-]
-
-// Paths to exclude
-const EXCLUDED_PATHS = [
-  'node_modules',
-  '.git',
-  '.next',
-  '.nuxt',
-  'dist',
-  'build',
-  '.vscode',
-  '.idea',
-  '__pycache__',
-  '.pytest_cache',
-  'venv',
-  'env',
-  '.env',
-  'coverage',
-  '.nyc_output',
-  '.cache'
-]
-
 export async function fetchRepoStructure(owner: string, repo: string): Promise<string[]> {
   try {
     // First, fetch repository info to get the default branch
