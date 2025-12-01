@@ -202,31 +202,6 @@ async function fetchFileContent(
   }
 }
 
-function shouldIncludeFile(filePath: string): boolean {
-  const lowerPath = filePath.toLowerCase()
-  
-  // Exclude files in excluded directories
-  for (const excluded of EXCLUDED_PATHS) {
-    if (lowerPath.includes(excluded.toLowerCase())) {
-      return false
-    }
-  }
-  
-  // Include important files regardless of extension
-  const fileName = filePath.split('/').pop()?.toLowerCase() || ''
-  if (IMPORTANT_FILES.includes(fileName)) {
-    return true
-  }
-  
-  // Include files with allowed extensions
-  const extension = filePath.substring(filePath.lastIndexOf('.'))
-  if (INCLUDED_EXTENSIONS.includes(extension.toLowerCase())) {
-    return true
-  }
-  
-  return false
-}
-
 export async function generateDocumentation(
   owner: string,
   repo: string,

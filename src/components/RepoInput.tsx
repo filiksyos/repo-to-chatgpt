@@ -44,6 +44,11 @@ export default function RepoInput({ onGenerate, loading }: RepoInputProps) {
         <p className="text-sm text-gray-500 mt-2">
           Enter a GitHub repository URL to generate documentation and ChatGPT deeplinks
         </p>
+        <div className="mt-3 p-3 bg-amber-50 border border-amber-200 rounded-md">
+          <p className="text-sm text-amber-800">
+            ⚠️ <strong>Note:</strong> This tool may not work well with very large repositories due to API limitations and URL length constraints.
+          </p>
+        </div>
       </div>
     </form>
   )
